@@ -140,7 +140,7 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('img/hero.jpg') center/cover no-repeat;
+  background: url('../img/hero.jpg') center/cover no-repeat;
   filter: brightness(0.38) grayscale(0.25);
   transform: scale(1.04);
   transition: transform 9s ease;
