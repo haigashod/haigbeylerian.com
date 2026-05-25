@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await fetch(HIRE_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors',
         body: JSON.stringify(Object.fromEntries(new FormData(hireForm))),
       });
       hireStatus.textContent = "Sent — I'll be in touch soon.";
