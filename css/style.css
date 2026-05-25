@@ -15,7 +15,6 @@
   --white: #f0f0f0;
   --font-display: 'DM Sans', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --font-hero: 'proxima-nova', 'DM Sans', sans-serif;
   --nav-w: 210px;
   --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -140,7 +139,7 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
   font-weight: 300;
 }
 .hero-content .subtitle {
-  font-family: var(--font-hero);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 0.78rem;
   letter-spacing: 0.28em;
@@ -150,7 +149,7 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
   margin-left: calc(0.1 * clamp(2.4rem, 5.8vw, 5.25rem));
 }
 .hero-content h1 {
-  font-family: var(--font-hero);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(2.4rem, 5.8vw, 5.25rem);
   letter-spacing: 0.2em;
