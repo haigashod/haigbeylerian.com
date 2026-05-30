@@ -472,17 +472,18 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
 .mobile-nav-toggle {
   display: none;
   position: fixed;
-  top: 1rem; right: 1rem;
+  top: 1.2rem; left: 1.2rem;
   z-index: 200;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: none;
+  border: none;
   color: var(--text);
-  padding: 0.6rem 1rem;
+  padding: 0.3rem;
   cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  line-height: 0;
+}
+.mobile-nav-toggle.hidden { display: none !important; }
+.nav-social-mobile {
+  display: none;
 }
 
 /* ── SECTION HEADER H2 ── */
@@ -620,19 +621,37 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
   nav {
     transform: translateX(-100%);
     transition: transform var(--tr);
-    width: 220px;
+    width: 240px;
     background: rgba(11,11,11,0.98);
   }
-  nav.open { transform: translateX(0); }
+  nav.open { transform: translateX(0); background: rgba(11,11,11,0.98); }
   main { margin-left: 0; }
-  .mobile-nav-toggle { display: block; }
+  .mobile-nav-toggle { display: flex; }
+  .site-social { display: none; }
+  .nav-social-mobile {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    padding-bottom: 0.5rem;
+  }
+  .nav-social-mobile a { color: rgba(240,240,240,0.45); transition: color var(--tr); display: flex; }
+  .nav-social-mobile a:hover { color: #ffffff; }
+  .nav-social-mobile svg { width: 16px; height: 16px; fill: currentColor; }
+  .hero-bg { background-image: url('../img/headshot-red.jpg'); background-position: center 15%; }
   #about.active { grid-template-columns: 1fr; }
   .about-image { display: none; }
-  #contact.active { padding: 3rem 1.5rem; }
+  #contact.active { padding: 3rem 1.5rem; align-items: flex-start; padding-top: 5rem; }
+  .contact-wrap { max-width: 100%; }
   .portfolio-item { grid-template-columns: 1fr; }
   .portfolio-cover { max-width: 280px; }
   #home { margin-left: 0; width: 100vw; }
   #portfolio, #tabs { padding-left: 1.5rem; padding-right: 1.5rem; }
+  #portfolio { padding-top: 4rem; }
+  #tabs { padding-top: 4rem; }
+  .section-header { margin-bottom: 2rem; }
   .hero-content { padding: 0 1.5rem 3rem; }
-  .about-text, .contact-left, .contact-right { padding: 3rem 1.5rem; }
+  .hero-content h1 { letter-spacing: 0.08em; font-size: clamp(2rem, 10vw, 3.5rem); }
+  .hero-content .subtitle { letter-spacing: 0.18em; margin-left: 0; }
+  .about-text { padding: 4.5rem 1.5rem 3rem; }
+  .tabs-grid { grid-template-columns: 1fr 1fr; }
 }

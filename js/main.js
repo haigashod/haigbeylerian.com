@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.mobile-nav-toggle');
   const nav = document.querySelector('nav');
 
+  function closeNav() {
+    nav.classList.remove('open');
+    toggle?.classList.remove('hidden');
+  }
+
   function showPage(id) {
     pages.forEach(p => p.classList.remove('active'));
     navLinks.forEach(l => l.classList.remove('active'));
@@ -13,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (page) page.classList.add('active');
     if (link) link.classList.add('active');
     window.scrollTo(0, 0);
-    if (nav.classList.contains('open')) nav.classList.remove('open');
+    closeNav();
     nav.classList.toggle('on-hero', id === 'home');
   }
 
@@ -31,7 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  toggle?.addEventListener('click', () => nav.classList.toggle('open'));
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('hidden', isOpen);
+  });
+
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      closeNav();
+    }
+  });
 
   showPage('home');
 
