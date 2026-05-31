@@ -625,6 +625,7 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
     transition: transform var(--tr);
     width: 240px;
     background: rgba(11,11,11,0.98);
+    z-index: 300;
   }
   nav.open { transform: translateX(0); background: rgba(11,11,11,0.98); }
   main { margin-left: 0; }
