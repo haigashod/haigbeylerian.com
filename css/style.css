@@ -543,6 +543,7 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
   margin-bottom: 2rem;
   line-height: 1.6;
 }
+.hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
 .form-field { margin-bottom: 1.1rem; }
 .form-field label {
   display: block;

@@ -54,17 +54,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const hireForm   = document.getElementById('hire-form');
   const hireStatus = document.getElementById('hire-status');
+  const formLoadTime = Date.now();
 
   hireForm?.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // Honeypot: bots fill the hidden "website" field; humans never see it
+    if (hireForm.elements['website']?.value) return;
+
+    // Timing guard: real humans take at least 3 seconds to fill out a form
+    if (Date.now() - formLoadTime < 3000) return;
+
     const btn = hireForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
+      const data = new URLSearchParams(new FormData(hireForm));
+      data.delete('website'); // don't send the honeypot field
       await fetch(HIRE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: new URLSearchParams(new FormData(hireForm)),
+        body: data,
       });
       hireStatus.textContent = "Sent — I'll be in touch soon.";
       hireStatus.className = 'form-status success';
