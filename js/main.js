@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── PURCHASE REDIRECT ──
   const params        = new URLSearchParams(window.location.search);
   const purchaseState = params.get('purchase');
+  const gotoPage      = params.get('goto');
 
-  if (purchaseState) {
-    // Clean the query string without triggering a reload
+  if (purchaseState || gotoPage) {
     history.replaceState({}, '', window.location.pathname);
   }
 
@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (purchaseState === 'cancelled') {
     showPage('tabs');
     document.getElementById('cancel-banner').classList.add('is-visible');
+  } else if (gotoPage) {
+    showPage(gotoPage);
   } else {
     showPage('home');
   }
