@@ -4,31 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-product-id]').forEach(card => {
 
-    async function startCheckout() {
-      const productId   = card.dataset.productId;
-      const btn         = card.querySelector('.tab-card-btn');
-      const originalText = btn.textContent;
-
+    function startCheckout() {
+      const productId = card.dataset.productId;
+      const btn       = card.querySelector('.tab-card-btn');
       card.classList.add('is-loading');
-      btn.textContent = 'Loading…';
+      if (btn) btn.textContent = 'Loading…';
 
-      try {
-        const res = await fetch(`${WORKER_BASE}/create-checkout`, {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ productId }),
-        });
-
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-        const { url } = await res.json();
-        window.location.href = url;
-      } catch (err) {
-        console.error('Checkout error:', err);
-        card.classList.remove('is-loading');
-        btn.textContent = originalText;
-        alert('Error: ' + (err.message || err));
-      }
+      const form    = document.createElement('form');
+      form.method   = 'POST';
+      form.action   = `${WORKER_BASE}/create-checkout`;
+      const input   = document.createElement('input');
+      input.type    = 'hidden';
+      input.name    = 'productId';
+      input.value   = productId;
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
     }
 
     card.addEventListener('click', startCheckout);
