@@ -1,0 +1,12 @@
+name            = "haig-shop"
+main            = "src/index.js"
+compatibility_date  = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+binding     = "R2_BUCKET"
+bucket_name = "haig-tabs"
+
+[vars]
+SITE_URL    = "https://haigbeylerian.com"
+WORKER_BASE = "https://shop.haigbeylerian.com"

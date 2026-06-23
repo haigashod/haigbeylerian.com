@@ -25,6 +25,16 @@
 </head>
 <body>
 
+<!-- PURCHASE BANNERS -->
+<div id="purchase-banner" class="purchase-banner" role="alert">
+  <span>Payment received — check your email for your download link.</span>
+  <button class="purchase-banner-dismiss" aria-label="Dismiss">&#x2715;</button>
+</div>
+<div id="cancel-banner" class="purchase-banner purchase-banner--cancel" role="alert">
+  <span>Your purchase was cancelled — no charge was made.</span>
+  <button class="purchase-banner-dismiss" aria-label="Dismiss">&#x2715;</button>
+</div>
+
 <!-- MOBILE TOGGLE -->
 <button class="mobile-nav-toggle" aria-label="Open menu">
   <svg viewBox="0 0 20 14" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -292,55 +302,178 @@
   <section id="tabs" class="page">
     <div class="tabs-header">
       <h2>Guitar Tabs</h2>
-      <p>Complete note-for-note transcriptions of Haig's recordings, arranged for fingerstyle guitar. PDF downloads, available immediately after purchase.</p>
+      <p>Complete note-for-note transcriptions of Haig's recordings, arranged for fingerstyle guitar.</p>
+      <p class="tabs-email-notice">Downloads are delivered by email after checkout. Links expire in 24 hours — save your file promptly.</p>
     </div>
 
-    <div class="tabs-grid">
+    <!-- Books -->
+    <div class="tabs-section">
+      <div class="section-label">Books</div>
+      <div class="tabs-grid">
 
-      <a class="tab-card" href="https://haigbeylerian.gumroad.com/l/armenianfolkmusicforguitarvol2" target="_blank" rel="noopener">
-        <img src="img/armenian-vol2.jpg" alt="Armenian Folk Music for Guitar Vol. 2 — Transcriptions" />
-        <div class="tab-card-overlay">
-          <div class="tab-card-title">Armenian Folk Music for Guitar, Vol. 2</div>
-          <div class="tab-card-price">CA$30.00</div>
-          <div class="tab-card-btn">Get Tabs →</div>
+        <div class="tab-card" data-product-id="afm-vol2" role="button" tabindex="0"
+             aria-label="Armenian Folk Music for Guitar, Vol. 2 — CA$30.00">
+          <img src="img/armenian-vol2.jpg" alt="Armenian Folk Music for Guitar Vol. 2" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Armenian Folk Music for Guitar, Vol. 2</div>
+            <div class="tab-card-price">CA$30.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
         </div>
-      </a>
 
-      <a class="tab-card" href="https://haigbeylerian.gumroad.com/l/sologuitar" target="_blank" rel="noopener">
-        <img src="img/solo-guitar.jpg" alt="Solo Guitar — Transcriptions" />
-        <div class="tab-card-overlay">
-          <div class="tab-card-title">Solo Guitar — Transcriptions</div>
-          <div class="tab-card-price">CA$30.00</div>
-          <div class="tab-card-btn">Get Tabs →</div>
+        <div class="tab-card" data-product-id="solo" role="button" tabindex="0"
+             aria-label="Solo Guitar — CA$30.00">
+          <img src="img/solo-guitar.jpg" alt="Solo Guitar" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Solo Guitar</div>
+            <div class="tab-card-price">CA$30.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
         </div>
-      </a>
 
-      <a class="tab-card" href="https://haigbeylerian.gumroad.com/l/armenianfolkmusicforguitarvol1" target="_blank" rel="noopener">
-        <img src="img/armenian-vol1.jpg" alt="Armenian Folk Music for Guitar — Transcriptions" />
-        <div class="tab-card-overlay">
-          <div class="tab-card-title">Armenian Folk Music for Guitar</div>
-          <div class="tab-card-price">CA$30.00</div>
-          <div class="tab-card-btn">Get Tabs →</div>
+        <div class="tab-card" data-product-id="afm-vol1" role="button" tabindex="0"
+             aria-label="Armenian Folk Music for Guitar — CA$30.00">
+          <img src="img/armenian-vol1.jpg" alt="Armenian Folk Music for Guitar" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Armenian Folk Music for Guitar</div>
+            <div class="tab-card-price">CA$30.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
         </div>
-      </a>
 
-      <a class="tab-card" href="https://haigbeylerian.gumroad.com/" target="_blank" rel="noopener">
-        <div style="width:100%;height:100%;background:#161616;display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:300;color:rgba(240,240,240,0.2);letter-spacing:0.1em;">Individual<br>Transcriptions</span>
-        </div>
-        <div class="tab-card-overlay">
-          <div class="tab-card-title">Individual Tabs &amp; Transcriptions</div>
-          <div class="tab-card-price">Various</div>
-          <div class="tab-card-btn">Browse →</div>
-        </div>
-      </a>
-
+      </div>
     </div>
 
-    <div class="tabs-footer">
-      <p>All purchases are delivered as PDF downloads via Gumroad. Secure checkout, instant delivery.</p>
-      <a class="btn-primary" href="https://haigbeylerian.gumroad.com/" target="_blank" rel="noopener">View Full Shop</a>
+    <hr class="tabs-divider">
+
+    <!-- Video Game Transcriptions -->
+    <div class="tabs-section">
+      <div class="section-label">Video Game Transcriptions</div>
+      <div class="tabs-grid">
+
+        <div class="tab-card" data-product-id="vg-1" role="button" tabindex="0"
+             aria-label="Video Game Title 1 — CA$5.00">
+          <img src="img/vg-1.jpg" alt="Video Game Title 1" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Video Game Title 1</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="vg-2" role="button" tabindex="0"
+             aria-label="Video Game Title 2 — CA$5.00">
+          <img src="img/vg-2.jpg" alt="Video Game Title 2" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Video Game Title 2</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="vg-3" role="button" tabindex="0"
+             aria-label="Video Game Title 3 — CA$5.00">
+          <img src="img/vg-3.jpg" alt="Video Game Title 3" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Video Game Title 3</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="vg-4" role="button" tabindex="0"
+             aria-label="Video Game Title 4 — CA$5.00">
+          <img src="img/vg-4.jpg" alt="Video Game Title 4" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Video Game Title 4</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="vg-5" role="button" tabindex="0"
+             aria-label="Video Game Title 5 — CA$5.00">
+          <img src="img/vg-5.jpg" alt="Video Game Title 5" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Video Game Title 5</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="vg-bundle" role="button" tabindex="0"
+             aria-label="Video Game Transcriptions — Complete Bundle, CA$20.00">
+          <img src="img/vg-bundle.jpg" alt="Video Game Transcriptions — Complete Bundle" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Complete Bundle (5)</div>
+            <div class="tab-card-price">CA$20.00</div>
+            <div class="tab-card-btn">Get Bundle →</div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <hr class="tabs-divider">
+
+    <!-- Pop Song Transcriptions -->
+    <div class="tabs-section">
+      <div class="section-label">Pop Song Transcriptions</div>
+      <div class="tabs-grid">
+
+        <div class="tab-card" data-product-id="pop-1" role="button" tabindex="0"
+             aria-label="Pop Song Title 1 — CA$5.00">
+          <img src="img/pop-1.jpg" alt="Pop Song Title 1" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Pop Song Title 1</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="pop-2" role="button" tabindex="0"
+             aria-label="Pop Song Title 2 — CA$5.00">
+          <img src="img/pop-2.jpg" alt="Pop Song Title 2" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Pop Song Title 2</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="pop-3" role="button" tabindex="0"
+             aria-label="Pop Song Title 3 — CA$5.00">
+          <img src="img/pop-3.jpg" alt="Pop Song Title 3" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Pop Song Title 3</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="pop-4" role="button" tabindex="0"
+             aria-label="Pop Song Title 4 — CA$5.00">
+          <img src="img/pop-4.jpg" alt="Pop Song Title 4" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Pop Song Title 4</div>
+            <div class="tab-card-price">CA$5.00</div>
+            <div class="tab-card-btn">Get Tabs →</div>
+          </div>
+        </div>
+
+        <div class="tab-card" data-product-id="pop-bundle" role="button" tabindex="0"
+             aria-label="Pop Song Transcriptions — Complete Bundle, CA$15.00">
+          <img src="img/pop-bundle.jpg" alt="Pop Song Transcriptions — Complete Bundle" />
+          <div class="tab-card-overlay">
+            <div class="tab-card-title">Complete Bundle (4)</div>
+            <div class="tab-card-price">CA$15.00</div>
+            <div class="tab-card-btn">Get Bundle →</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
@@ -406,5 +539,6 @@
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/shop.js"></script>
 </body>
 </html>

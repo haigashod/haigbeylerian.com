@@ -620,6 +620,70 @@ main { margin-left: var(--nav-w); min-height: 100vh; }
 ::-webkit-scrollbar-thumb { background: var(--border-mid); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+/* ── PURCHASE BANNERS ── */
+.purchase-banner {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 400;
+  background: var(--accent);
+  color: #0b0b0b;
+  padding: 0.75rem 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.purchase-banner.is-visible { display: flex; }
+.purchase-banner--cancel {
+  background: var(--surface2);
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-mid);
+}
+.purchase-banner-dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.65;
+  transition: opacity var(--tr);
+}
+.purchase-banner-dismiss:hover { opacity: 1; }
+
+/* ── TABS SECTIONS ── */
+.tabs-email-notice {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-top: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+.tabs-section { margin-bottom: 1rem; }
+.tabs-section .section-label { margin-bottom: 1.5rem; }
+.tabs-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 3rem;
+}
+
+/* ── TAB CARD LOADING STATE ── */
+.tab-card.is-loading {
+  pointer-events: none;
+  cursor: default;
+}
+.tab-card.is-loading .tab-card-btn {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(244,243,239,0.45);
+}
+
 @media (max-width: 900px) {
   nav {
     transform: translateX(-100%);

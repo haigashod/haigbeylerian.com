@@ -47,7 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  showPage('home');
+  // ── PURCHASE REDIRECT ──
+  const params        = new URLSearchParams(window.location.search);
+  const purchaseState = params.get('purchase');
+
+  if (purchaseState) {
+    // Clean the query string without triggering a reload
+    history.replaceState({}, '', window.location.pathname);
+  }
+
+  if (purchaseState === 'success') {
+    showPage('tabs');
+    document.getElementById('purchase-banner').classList.add('is-visible');
+  } else if (purchaseState === 'cancelled') {
+    showPage('tabs');
+    document.getElementById('cancel-banner').classList.add('is-visible');
+  } else {
+    showPage('home');
+  }
+
+  document.querySelectorAll('.purchase-banner-dismiss').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.purchase-banner').classList.remove('is-visible');
+    });
+  });
 
   // ── CONTACT FORM ──
   const HIRE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKuJKkFiVm0gdULK3xgPUQ5aTea3n-BKt84MANLSdTfq-Pmu_AQPN0KDDHhU6S2p3zfA/exec';
