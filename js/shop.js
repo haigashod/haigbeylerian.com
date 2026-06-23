@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Checkout error:', err);
         card.classList.remove('is-loading');
         btn.textContent = originalText;
-        alert('Something went wrong starting checkout. Please try again.');
+        alert('Error: ' + (err.message || err));
       }
     }
 
